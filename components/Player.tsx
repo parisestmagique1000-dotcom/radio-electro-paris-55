@@ -111,6 +111,13 @@ export default function Player() {
     </div>
   );
 }
+<span
+  className="cc_streaminfo"
+  data-type="song"
+  data-username="radioelec"
+>
+  on air
+</span>
 
 
 export default Player;
