@@ -82,4 +82,35 @@ const Player: React.FC<{ appName: string }> = ({ appName }) => {
   );
 };
 
+import React, { useEffect } from "react";
+
+export default function Player() {
+  useEffect(() => {
+    // évite de le recharger 50 fois
+    const id = "cc-streaminfo-script";
+    if (document.getElementById(id)) return;
+
+    const s = document.createElement("script");
+    s.id = id;
+    s.src = "https://philae.shoutca.st/system/streaminfo.js";
+    s.async = true;
+    document.body.appendChild(s);
+  }, []);
+
+  return (
+    <div>
+      <div className="text-sm text-white/80">
+        <span
+          className="cc_streaminfo"
+          data-type="song"
+          data-username="radioelec"
+        >
+          Loading ...
+        </span>
+      </div>
+    </div>
+  );
+}
+
+
 export default Player;
