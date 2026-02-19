@@ -1,0 +1,95 @@
+
+{
+  "settings": {
+    "appName": "Radio Electro Paris",
+    "slogan": "DIFFERENTS STYLES, UNE SCÈNE: PARIS",
+    "bgImage": "https://i.postimg.cc/FKXmZXkt/cb4ad0-41d2ca721e9a46fd825dc25a4e2c8a97-mv2-png.avif",
+    "accentColor": "#3b82f6",
+    "socials": {
+      "instagram": "https://www.instagram.com/radioelectroparis/",
+      "facebook": "https://www.facebook.com/radioelectroparis/",
+      "tiktok": "https://www.tiktok.com/@radioelectroparis",
+      "contact": "https://www.instagram.com/radioelectroparis/"
+    }
+  },
+  "sections": [
+    {
+      "id": "hero-header",
+      "type": "hero",
+      "enabled": true,
+      "order": 1,
+      "data": {
+        "badge": "le son des dj's de Paris",
+        "title": ""
+      }
+    },
+    {
+      "id": "main-schedule",
+      "type": "schedule",
+      "enabled": true,
+      "order": 2,
+      "data": {}
+    },
+    {
+      "id": "residents-grid",
+      "type": "grid",
+      "enabled": true,
+      "order": 3,
+      "data": {
+        "title": "DJ'S RÉSIDENTS",
+        "items": [
+          { "name": "Sissi Laz", "role": "Rexy - Resident", "image": "https://i.postimg.cc/MTR98JWM/sissilaz.jpg", "instaUrl": "https://www.instagram.com/sissilazmusic/", "scUrl": "https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/sissilaz/girly-groove" },
+          { "name": "DJ DM", "role": "Overside - Resident", "image": "https://i.postimg.cc/HstmTKJT/Chat-GPT-Image-11-fevr-2026-a-00-57-43.png", "instaUrl": "https://www.instagram.com/djdmparis/", "spotifyUrl": "https://open.spotify.com/playlist/7BVJ9AYYOM6EWbyiZBNGBk", "scUrl": "https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/discover" }
+        ]
+      }
+    },
+    {
+      "id": "cta-guests",
+      "type": "cta",
+      "enabled": true,
+      "order": 4,
+      "data": {
+        "title": "DJ'S GUESTS",
+        "buttonText": "VOIR LES GUESTS",
+        "targetTab": "guest"
+      }
+    },
+    {
+      "id": "events-grid",
+      "type": "grid",
+      "enabled": true,
+      "order": 5,
+      "data": {
+        "title": "SOIRÉES DE LA SEMAINE",
+        "items": [
+          { "name": "Silencio", "role": "Soirée de la semaine", "image": "https://i.postimg.cc/g0fDrdJ8/Sans_titre.jpg", "instaUrl": "https://www.instagram.com/belle.epoque.paris/", "scUrl": "https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/edouard_paris/edoouard-warm-up-silencio" },
+          { "name": "Disco Bowl", "role": "Soirée de la semaine", "image": "https://i.postimg.cc/k5kcD948/Sans_titre_2.jpg", "instaUrl": "https://www.instagram.com/lediscobowl/", "scUrl": "https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/marinatrench/live-marina-trench-all-night-long-rex-club" },
+          { "name": "Le Rexy", "role": "Soirée de la semaine", "image": "https://i.postimg.cc/pdgwvwtx/Sans-titre.jpg", "instaUrl": "https://www.instagram.com/lerexyparisofficiel75/", "scUrl": "https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/sissilaz/sounds-of-adibu" }
+        ]
+      }
+    },
+    {
+      "id": "emissions-grid",
+      "type": "grid",
+      "enabled": true,
+      "order": 6,
+      "data": {
+        "title": "LES ÉMISSIONS",
+        "items": [
+          { 
+            "name": "100% PARIS - L'ÉMISSION", 
+            "role": "sons & remix parisiens", 
+            "image": "https://i.postimg.cc/YC3Mf35w/Chat-GPT-Image-18-fevr-2026-a-00-20-55.png",
+            "targetTab": "100paris"
+          },
+          { 
+            "name": "PLAYGROUND", 
+            "role": "1 DJ INVITE 1 POTE À JOUER", 
+            "image": "https://i.postimg.cc/htCNt3k6/Chat-GPT-Image-18-fevr-2026-a-00-31-02.png",
+            "targetTab": "playground"
+          }
+        ]
+      }
+    }
+  ]
+}
