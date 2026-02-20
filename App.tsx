@@ -69,38 +69,41 @@ const App: React.FC = () => {
     }
   };
 
-  return (
-    <div className="min-h-screen text-zinc-100 flex flex-col relative">
-      <Navigation 
-        activeTab={activeTab} 
-        setActiveTab={setActiveTab} 
-        appName={siteData.settings.appName}
-      />
-      
-      <Player appName={siteData.settings.appName} />
+ return (
+  <div className="relative min-h-screen text-zinc-100">
+    {/* 🖼️ Background global */}
+    <div
+      className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+      style={{
+        backgroundImage: "url('https://i.postimg.cc/8C4MGfsN/Design_sans_titre_2025_04_22T112510_781_ujwz0b_png.avif')",
+      }}
+    />
 
-      <main className="flex-1 animate-fade max-w-7xl mx-auto w-full">
-        {renderPage()}
+    {/* 🟤 Voile sombre pour contrast */}
+    <div className="absolute inset-0 bg-black/70"></div>
+
+    {/* 📦 Contenu principal */}
+    <div className="relative z-10 flex flex-col min-h-screen">
+      <Navigation
+        activeTab={activeTab}
+        setActiveTab={setActiveTab}
+        appName={siteData.settings?.appName || "Radio Electro Paris"}
+      />
+
+      <Player appName={siteData.settings?.appName || "Radio Electro Paris"} />
+
+      <main className="flex-1 animate-fade py-10">
+        <div className="max-w-7xl mx-auto px-6">
+          {renderPage()}
+        </div>
       </main>
 
-      <footer className="py-16 px-8 border-t border-white/5 bg-black/40 backdrop-blur-md">
-        <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-12">
-          <div className="flex flex-col items-center md:items-start text-center md:text-left">
-             <h2 className="font-unbounded font-black text-[12px] uppercase tracking-tighter text-blue-500">RADIO ELECTRO PARIS</h2>
-             <p className="text-zinc-600 text-[9px] font-bold uppercase tracking-[0.4em] mt-2 mb-6">Le son des dj's de Paris.</p>
-             <div className="flex items-center gap-6">
-               <a href={siteData.settings.socials.instagram} target="_blank" className="text-zinc-400 hover:text-white transition-colors text-[10px] font-black uppercase tracking-widest">Instagram</a>
-               <a href={siteData.settings.socials.facebook} target="_blank" className="text-zinc-400 hover:text-white transition-colors text-[10px] font-black uppercase tracking-widest">Facebook</a>
-               <a href={siteData.settings.socials.tiktok} target="_blank" className="text-zinc-400 hover:text-white transition-colors text-[10px] font-black uppercase tracking-widest">TikTok</a>
-             </div>
-          </div>
-          <div className="text-zinc-800 text-[10px] font-bold uppercase tracking-widest font-unbounded">
-            © {new Date().getFullYear()} {siteData.settings.appName}
-          </div>
-        </div>
+      <footer className="py-8 px-6 border-t border-white/10 bg-black/50 backdrop-blur-md text-zinc-400 text-[10px]">
+        © {new Date().getFullYear()} {siteData.settings?.appName}
       </footer>
     </div>
-  );
-};
+  </div>
+);
+
 
 export default App;
