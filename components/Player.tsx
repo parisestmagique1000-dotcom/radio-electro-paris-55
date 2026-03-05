@@ -49,6 +49,36 @@ const Player: React.FC<{ appName: string }> = ({ appName }) => {
 
     if (!target) return;
 
+    const coverEl = document.querySelector(
+  '.cc_streaminfo[data-type="trackimageurl"][data-username="radioelec"]'
+) as HTMLImageElement | null;
+
+const updateCoverFromShoutcast = () => {
+  if (!coverEl) return;
+
+  const src =
+    (coverEl as any).currentSrc ||
+    coverEl.getAttribute("src") ||
+    (coverEl as any).src ||
+    "";
+
+  // sécurité: ignore vides / "Loading"
+  if (!src || src.toLowerCase().includes("loading")) return;
+
+  // si ça change vraiment
+  setCoverUrl(src);
+};
+
+// 1er essai après un petit délai (le temps que streaminfo.js remplisse)
+setTimeout(updateCoverFromShoutcast, 1500);
+
+// observe les changements du src de l’image shoutcast
+const coverObs = coverEl
+  ? new MutationObserver(() => updateCoverFromShoutcast())
+  : null;
+
+coverObs?.observe(coverEl, { attributes: true, attributeFilter: ["src"] });
+
     const updateFromText = async () => {
       const text = (target.textContent || "").trim();
       if (!text || text.toLowerCase().includes("chargement")) return;
@@ -77,8 +107,9 @@ const Player: React.FC<{ appName: string }> = ({ appName }) => {
     return () => {
       clearTimeout(t1);
       obs.disconnect();
+      coverObs?.disconnect();
     };
-  }, []);
+}, []);  
 
   useEffect(() => {
     if (audioRef.current) audioRef.current.volume = volume;
@@ -121,7 +152,12 @@ const Player: React.FC<{ appName: string }> = ({ appName }) => {
                 onError={() => setCoverUrl(FALLBACK_COVER)}
               />
             </div>
-
+<img
+  className="cc_streaminfo hidden"
+  data-type="trackimageurl"
+  data-username="radioelec"
+  alt=""
+/>
             {/* PLAY */}
             <button
               onClick={togglePlay}
