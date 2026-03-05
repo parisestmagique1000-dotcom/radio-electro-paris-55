@@ -1,4 +1,18 @@
-
+<button
+  onClick={() => {
+    const w = 360, h = 600;
+    const l = (window.screen.width / 2) - (w / 2);
+    const t = (window.screen.height / 2) - (h / 2);
+    window.open(
+      window.location.origin + window.location.pathname + '?mode=player',
+      'REP_Player',
+      `width=${w},height=${h},left=${l},top=${t},status=no`
+    );
+  }}
+  className="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-zinc-900 border border-white/10 text-white hover:bg-zinc-800 transition"
+>
+  Ouvrir le lecteur
+</button>
 import React from 'react';
 import DynamicRenderer from '../components/DynamicRenderer';
 
